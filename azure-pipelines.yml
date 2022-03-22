@@ -20,3 +20,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: 'docker connection'
+    repository: 'spring boot'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
