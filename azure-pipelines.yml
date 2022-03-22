@@ -21,7 +21,6 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-steps:
 - task: Docker@2
   inputs:
     containerRegistry: 'docker connection'
